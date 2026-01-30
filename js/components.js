@@ -2686,4 +2686,474 @@ document.addEventListener('click', (e) => {
 </style>`
   },
 
+  // ===================== LOADERS =====================
+
+  {
+    category: "loaders",
+    tag: "Loaders",
+    name: "Spinner",
+    preview: `<div style="width:32px;height:32px;border:3px solid #30363d;border-top-color:#58a6ff;border-radius:50%;animation:spin 0.8s linear infinite"></div><style>@keyframes spin{to{transform:rotate(360deg)}}</style>`,
+    code: `<div class="spinner"></div>
+
+<style>
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #30363d;
+  border-top-color: #58a6ff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>`
+  },
+
+  {
+    category: "loaders",
+    tag: "Loaders",
+    name: "Dots Loader",
+    preview: `<div style="display:flex;gap:6px"><div style="width:10px;height:10px;background:#58a6ff;border-radius:50%;animation:bounce 0.6s ease-in-out infinite"></div><div style="width:10px;height:10px;background:#58a6ff;border-radius:50%;animation:bounce 0.6s ease-in-out 0.1s infinite"></div><div style="width:10px;height:10px;background:#58a6ff;border-radius:50%;animation:bounce 0.6s ease-in-out 0.2s infinite"></div></div><style>@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}</style>`,
+    code: `<div class="dots-loader">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<style>
+.dots-loader {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #58a6ff;
+  border-radius: 50%;
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.1s; }
+.dot:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+</style>`
+  },
+
+  {
+    category: "loaders",
+    tag: "Loaders",
+    name: "Pulse Loader",
+    preview: `<div style="width:40px;height:40px;background:#58a6ff;border-radius:50%;animation:pulse 1.2s ease-in-out infinite"></div><style>@keyframes pulse{0%{transform:scale(0.8);opacity:1}50%{transform:scale(1);opacity:0.5}100%{transform:scale(0.8);opacity:1}}</style>`,
+    code: `<div class="pulse-loader"></div>
+
+<style>
+.pulse-loader {
+  width: 40px;
+  height: 40px;
+  background: #58a6ff;
+  border-radius: 50%;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 1; }
+  50% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(0.8); opacity: 1; }
+}
+</style>`
+  },
+
+  // ===================== TABLES =====================
+
+  {
+    category: "tables",
+    tag: "Tables",
+    name: "Simple Table",
+    preview: `<table style="width:100%;border-collapse:collapse;font-size:13px;background:#161b22;border-radius:8px;overflow:hidden"><thead><tr style="background:#21262d"><th style="padding:12px 16px;text-align:left;color:#e6edf3;font-weight:600">Name</th><th style="padding:12px 16px;text-align:left;color:#e6edf3;font-weight:600">Role</th><th style="padding:12px 16px;text-align:left;color:#e6edf3;font-weight:600">Status</th></tr></thead><tbody><tr style="border-top:1px solid #30363d"><td style="padding:12px 16px;color:#e6edf3">Alice</td><td style="padding:12px 16px;color:#8b949e">Developer</td><td style="padding:12px 16px"><span style="background:#238636;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px">Active</span></td></tr><tr style="border-top:1px solid #30363d"><td style="padding:12px 16px;color:#e6edf3">Bob</td><td style="padding:12px 16px;color:#8b949e">Designer</td><td style="padding:12px 16px"><span style="background:#238636;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px">Active</span></td></tr></tbody></table>`,
+    code: `<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>Developer</td>
+      <td><span class="badge success">Active</span></td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>Designer</td>
+      <td><span class="badge success">Active</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #161b22;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  background: #21262d;
+  color: #e6edf3;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 12px 16px;
+  border-top: 1px solid #30363d;
+  color: #e6edf3;
+}
+
+.table tbody tr:hover {
+  background: #21262d;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.badge.success {
+  background: #238636;
+  color: #fff;
+}
+</style>`
+  },
+
+  // ===================== DIVIDERS =====================
+
+  {
+    category: "dividers",
+    tag: "Dividers",
+    name: "Simple Divider",
+    preview: `<div style="width:100%;display:flex;flex-direction:column;gap:12px"><span style="color:#8b949e;font-size:13px">Content above</span><hr style="border:none;height:1px;background:#30363d;margin:0"><span style="color:#8b949e;font-size:13px">Content below</span></div>`,
+    code: `<hr class="divider">
+
+<style>
+.divider {
+  border: none;
+  height: 1px;
+  background: #30363d;
+  margin: 16px 0;
+}
+</style>`
+  },
+
+  {
+    category: "dividers",
+    tag: "Dividers",
+    name: "Divider with Text",
+    preview: `<div style="display:flex;align-items:center;gap:16px;width:100%"><div style="flex:1;height:1px;background:#30363d"></div><span style="color:#8b949e;font-size:13px">OR</span><div style="flex:1;height:1px;background:#30363d"></div></div>`,
+    code: `<div class="divider-text">
+  <span>OR</span>
+</div>
+
+<style>
+.divider-text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #30363d;
+}
+
+.divider-text span {
+  color: #8b949e;
+  font-size: 13px;
+}
+</style>`
+  },
+
+  // ===================== RATINGS =====================
+
+  {
+    category: "ratings",
+    tag: "Ratings",
+    name: "Star Rating",
+    preview: `<div style="display:flex;gap:4px"><span style="color:#f0b429;font-size:20px">★</span><span style="color:#f0b429;font-size:20px">★</span><span style="color:#f0b429;font-size:20px">★</span><span style="color:#f0b429;font-size:20px">★</span><span style="color:#30363d;font-size:20px">★</span></div>`,
+    code: `<div class="star-rating">
+  <span class="star filled">★</span>
+  <span class="star filled">★</span>
+  <span class="star filled">★</span>
+  <span class="star filled">★</span>
+  <span class="star">★</span>
+</div>
+
+<style>
+.star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 20px;
+  color: #30363d;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.star.filled {
+  color: #f0b429;
+}
+
+.star:hover {
+  color: #f0b429;
+}
+</style>`
+  },
+
+  {
+    category: "ratings",
+    tag: "Ratings",
+    name: "Rating with Count",
+    preview: `<div style="display:flex;align-items:center;gap:8px"><div style="display:flex;gap:2px"><span style="color:#f0b429;font-size:16px">★</span><span style="color:#f0b429;font-size:16px">★</span><span style="color:#f0b429;font-size:16px">★</span><span style="color:#f0b429;font-size:16px">★</span><span style="color:#30363d;font-size:16px">★</span></div><span style="color:#e6edf3;font-size:14px;font-weight:600">4.0</span><span style="color:#8b949e;font-size:13px">(128 reviews)</span></div>`,
+    code: `<div class="rating-display">
+  <div class="stars">
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star filled">★</span>
+    <span class="star">★</span>
+  </div>
+  <span class="rating-value">4.0</span>
+  <span class="rating-count">(128 reviews)</span>
+</div>
+
+<style>
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 16px;
+  color: #30363d;
+}
+
+.star.filled {
+  color: #f0b429;
+}
+
+.rating-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.rating-count {
+  font-size: 13px;
+  color: #8b949e;
+}
+</style>`
+  },
+
+  // ===================== SEARCH =====================
+
+  {
+    category: "search",
+    tag: "Search",
+    name: "Search Bar",
+    preview: `<div style="position:relative;width:100%;max-width:300px"><input type="text" placeholder="Search..." style="width:100%;padding:10px 12px 10px 40px;background:#21262d;border:1px solid #30363d;border-radius:8px;color:#e6edf3;font-size:14px;outline:none"><svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#8b949e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>`,
+    code: `<div class="search-bar">
+  <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+  <input type="text" placeholder="Search...">
+</div>
+
+<style>
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #e6edf3;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #58a6ff;
+}
+
+.search-bar input::placeholder {
+  color: #8b949e;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #8b949e;
+  pointer-events: none;
+}
+</style>`
+  },
+
+  // ===================== FILE UPLOAD =====================
+
+  {
+    category: "inputs",
+    tag: "Inputs",
+    name: "File Upload",
+    preview: `<div style="border:2px dashed #30363d;border-radius:12px;padding:32px;text-align:center;cursor:pointer;transition:border-color 0.2s"><svg style="width:40px;height:40px;color:#8b949e;margin-bottom:12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><p style="color:#e6edf3;font-size:14px;margin:0 0 4px">Drop files here or click to upload</p><p style="color:#8b949e;font-size:12px;margin:0">PNG, JPG up to 10MB</p></div>`,
+    code: `<div class="file-upload">
+  <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+    <polyline points="17 8 12 3 7 8"/>
+    <line x1="12" y1="3" x2="12" y2="15"/>
+  </svg>
+  <p class="upload-text">Drop files here or click to upload</p>
+  <p class="upload-hint">PNG, JPG up to 10MB</p>
+  <input type="file" hidden>
+</div>
+
+<style>
+.file-upload {
+  border: 2px dashed #30363d;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.file-upload:hover {
+  border-color: #58a6ff;
+  background: rgba(88, 166, 255, 0.05);
+}
+
+.upload-icon {
+  width: 40px;
+  height: 40px;
+  color: #8b949e;
+  margin-bottom: 12px;
+}
+
+.upload-text {
+  color: #e6edf3;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.upload-hint {
+  color: #8b949e;
+  font-size: 12px;
+  margin: 0;
+}
+</style>`
+  },
+
+  // ===================== CODE BLOCKS =====================
+
+  {
+    category: "code",
+    tag: "Code",
+    name: "Code Block",
+    preview: `<div style="background:#1e1e2e;border-radius:8px;overflow:hidden"><div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#161b22;border-bottom:1px solid #30363d"><span style="color:#8b949e;font-size:12px">JavaScript</span><button style="background:none;border:none;color:#8b949e;font-size:12px;cursor:pointer">Copy</button></div><pre style="margin:0;padding:16px;overflow-x:auto"><code style="font-family:monospace;font-size:13px;color:#cdd6f4">const greet = (name) => {
+  console.log(\`Hello, \${name}!\`);
+};</code></pre></div>`,
+    code: `<div class="code-block">
+  <div class="code-header">
+    <span class="code-lang">JavaScript</span>
+    <button class="code-copy">Copy</button>
+  </div>
+  <pre><code>const greet = (name) => {
+  console.log(\`Hello, \${name}!\`);
+};</code></pre>
+</div>
+
+<style>
+.code-block {
+  background: #1e1e2e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.code-lang {
+  color: #8b949e;
+  font-size: 12px;
+}
+
+.code-copy {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.code-copy:hover {
+  color: #58a6ff;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  color: #cdd6f4;
+}
+</style>`
+  },
+
 ];
