@@ -3156,4 +3156,606 @@ document.addEventListener('click', (e) => {
 </style>`
   },
 
+  // ===================== COUNTDOWN =====================
+
+  {
+    category: "countdown",
+    tag: "Countdown",
+    name: "Countdown Timer",
+    preview: `<div style="display:flex;gap:12px;text-align:center"><div style="background:#21262d;padding:16px 20px;border-radius:8px"><div style="font-size:28px;font-weight:700;color:#e6edf3">07</div><div style="font-size:11px;color:#8b949e;margin-top:4px">DAYS</div></div><div style="background:#21262d;padding:16px 20px;border-radius:8px"><div style="font-size:28px;font-weight:700;color:#e6edf3">14</div><div style="font-size:11px;color:#8b949e;margin-top:4px">HOURS</div></div><div style="background:#21262d;padding:16px 20px;border-radius:8px"><div style="font-size:28px;font-weight:700;color:#e6edf3">32</div><div style="font-size:11px;color:#8b949e;margin-top:4px">MINS</div></div><div style="background:#21262d;padding:16px 20px;border-radius:8px"><div style="font-size:28px;font-weight:700;color:#e6edf3">58</div><div style="font-size:11px;color:#8b949e;margin-top:4px">SECS</div></div></div>`,
+    code: `<div class="countdown">
+  <div class="countdown-item">
+    <span class="countdown-value" id="days">07</span>
+    <span class="countdown-label">DAYS</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="hours">14</span>
+    <span class="countdown-label">HOURS</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="minutes">32</span>
+    <span class="countdown-label">MINS</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="seconds">58</span>
+    <span class="countdown-label">SECS</span>
+  </div>
+</div>
+
+<style>
+.countdown {
+  display: flex;
+  gap: 12px;
+}
+
+.countdown-item {
+  background: #21262d;
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.countdown-value {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.countdown-label {
+  font-size: 11px;
+  color: #8b949e;
+  margin-top: 4px;
+  display: block;
+}
+</style>
+
+<script>
+// Set your target date
+const targetDate = new Date('2025-12-31T00:00:00');
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent = String(days).padStart(2, '0');
+  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>`
+  },
+
+  // ===================== FAQ =====================
+
+  {
+    category: "faq",
+    tag: "FAQ",
+    name: "FAQ Section",
+    preview: `<div style="width:100%;max-width:400px"><div style="background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:8px"><div style="padding:16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span style="color:#e6edf3;font-weight:600;font-size:14px">How do I get started?</span><span style="color:#8b949e">+</span></div></div><div style="background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:8px"><div style="padding:16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span style="color:#e6edf3;font-weight:600;font-size:14px">What payment methods?</span><span style="color:#8b949e">+</span></div></div><div style="background:#161b22;border:1px solid #30363d;border-radius:8px"><div style="padding:16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span style="color:#e6edf3;font-weight:600;font-size:14px">Can I cancel anytime?</span><span style="color:#8b949e">+</span></div></div></div>`,
+    code: `<div class="faq">
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>How do I get started?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Simply sign up for an account and follow our quick setup guide. You'll be up and running in minutes.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>What payment methods do you accept?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>We accept all major credit cards, PayPal, and bank transfers.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">
+      <span>Can I cancel anytime?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Yes, you can cancel your subscription at any time with no cancellation fees.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.faq {
+  max-width: 600px;
+}
+
+.faq-item {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e6edf3;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+}
+
+.faq-icon {
+  color: #8b949e;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+.faq-answer p {
+  padding: 0 16px 16px;
+  margin: 0;
+  color: #8b949e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+</style>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.faq-item').classList.toggle('active');
+  });
+});
+</script>`
+  },
+
+  // ===================== PRODUCTS =====================
+
+  {
+    category: "products",
+    tag: "Products",
+    name: "Product Card",
+    preview: `<div style="background:#161b22;border:1px solid #30363d;border-radius:12px;overflow:hidden;width:220px"><div style="height:140px;background:linear-gradient(135deg,#21262d,#30363d);display:flex;align-items:center;justify-content:center"><span style="font-size:48px">👟</span></div><div style="padding:16px"><p style="color:#8b949e;font-size:12px;margin:0 0 4px">Footwear</p><h3 style="color:#e6edf3;font-size:15px;margin:0 0 8px;font-weight:600">Running Shoes</h3><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="color:#e6edf3;font-weight:700;font-size:18px">$89</span><span style="color:#8b949e;font-size:13px;text-decoration:line-through">$129</span></div><button style="width:100%;padding:10px;background:#58a6ff;color:#fff;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">Add to Cart</button></div></div>`,
+    code: `<div class="product-card">
+  <div class="product-image">
+    <img src="product.jpg" alt="Product">
+    <span class="product-badge">Sale</span>
+  </div>
+  <div class="product-info">
+    <p class="product-category">Footwear</p>
+    <h3 class="product-title">Running Shoes</h3>
+    <div class="product-price">
+      <span class="price-current">$89</span>
+      <span class="price-original">$129</span>
+    </div>
+    <button class="product-btn">Add to Cart</button>
+  </div>
+</div>
+
+<style>
+.product-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 280px;
+}
+
+.product-image {
+  position: relative;
+  height: 180px;
+  background: #21262d;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #da3633;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-category {
+  color: #8b949e;
+  font-size: 12px;
+  margin: 0 0 4px;
+}
+
+.product-title {
+  color: #e6edf3;
+  font-size: 16px;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.price-current {
+  color: #e6edf3;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.price-original {
+  color: #8b949e;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.product-btn {
+  width: 100%;
+  padding: 12px;
+  background: #58a6ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-btn:hover {
+  background: #79b8ff;
+}
+</style>`
+  },
+
+  // ===================== GALLERY =====================
+
+  {
+    category: "gallery",
+    tag: "Gallery",
+    name: "Image Gallery",
+    preview: `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:300px"><div style="aspect-ratio:1;background:linear-gradient(135deg,#58a6ff,#8b5cf6);border-radius:8px"></div><div style="aspect-ratio:1;background:linear-gradient(135deg,#f0b429,#da3633);border-radius:8px"></div><div style="aspect-ratio:1;background:linear-gradient(135deg,#238636,#58a6ff);border-radius:8px"></div><div style="aspect-ratio:1;background:linear-gradient(135deg,#da3633,#f0b429);border-radius:8px"></div><div style="aspect-ratio:1;background:linear-gradient(135deg,#8b5cf6,#58a6ff);border-radius:8px"></div><div style="aspect-ratio:1;background:linear-gradient(135deg,#238636,#f0b429);border-radius:8px"></div></div>`,
+    code: `<div class="gallery">
+  <div class="gallery-item">
+    <img src="image1.jpg" alt="Gallery image">
+  </div>
+  <div class="gallery-item">
+    <img src="image2.jpg" alt="Gallery image">
+  </div>
+  <div class="gallery-item">
+    <img src="image3.jpg" alt="Gallery image">
+  </div>
+  <div class="gallery-item">
+    <img src="image4.jpg" alt="Gallery image">
+  </div>
+  <div class="gallery-item">
+    <img src="image5.jpg" alt="Gallery image">
+  </div>
+  <div class="gallery-item">
+    <img src="image6.jpg" alt="Gallery image">
+  </div>
+</div>
+
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* For 2-column on mobile */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>`
+  },
+
+  // ===================== MEDIA =====================
+
+  {
+    category: "media",
+    tag: "Media",
+    name: "Video Embed",
+    preview: `<div style="position:relative;width:100%;max-width:320px;aspect-ratio:16/9;background:#161b22;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center"><div style="width:60px;height:60px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer"><div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #161b22;margin-left:4px"></div></div><div style="position:absolute;bottom:12px;left:12px;right:12px;display:flex;align-items:center;gap:8px"><div style="width:8px;height:8px;background:#da3633;border-radius:50%"></div><div style="flex:1;height:4px;background:#30363d;border-radius:2px"><div style="width:35%;height:100%;background:#e6edf3;border-radius:2px"></div></div><span style="color:#e6edf3;font-size:11px">2:45</span></div></div>`,
+    code: `<div class="video-player">
+  <div class="video-thumbnail">
+    <img src="thumbnail.jpg" alt="Video thumbnail">
+    <button class="play-button">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="video-controls">
+    <div class="video-progress">
+      <div class="progress-bar" style="width: 35%"></div>
+    </div>
+    <div class="video-info">
+      <span class="video-time">2:45 / 8:30</span>
+      <div class="video-buttons">
+        <button class="control-btn">🔊</button>
+        <button class="control-btn">⛶</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.video-player {
+  max-width: 640px;
+  background: #161b22;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-thumbnail {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #0d1117;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button svg {
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+}
+
+.video-controls {
+  padding: 12px 16px;
+}
+
+.video-progress {
+  height: 4px;
+  background: #30363d;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+}
+
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.video-time {
+  color: #8b949e;
+  font-size: 13px;
+}
+
+.video-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: #8b949e;
+  cursor: pointer;
+  font-size: 16px;
+}
+</style>`
+  },
+
+  {
+    category: "media",
+    tag: "Media",
+    name: "Audio Player",
+    preview: `<div style="background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;display:flex;align-items:center;gap:16px;width:100%;max-width:360px"><div style="width:56px;height:56px;background:linear-gradient(135deg,#58a6ff,#8b5cf6);border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center"><span style="font-size:24px">🎵</span></div><div style="flex:1;min-width:0"><p style="color:#e6edf3;font-size:14px;font-weight:600;margin:0 0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Summer Vibes</p><p style="color:#8b949e;font-size:12px;margin:0 0 8px">Artist Name</p><div style="display:flex;align-items:center;gap:8px"><span style="color:#8b949e;font-size:11px">1:24</span><div style="flex:1;height:4px;background:#30363d;border-radius:2px"><div style="width:40%;height:100%;background:#58a6ff;border-radius:2px"></div></div><span style="color:#8b949e;font-size:11px">3:45</span></div></div><button style="width:40px;height:40px;background:#58a6ff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid #fff;margin-left:2px"></div></button></div>`,
+    code: `<div class="audio-player">
+  <div class="audio-cover">
+    <img src="album-cover.jpg" alt="Album cover">
+  </div>
+  <div class="audio-info">
+    <p class="audio-title">Summer Vibes</p>
+    <p class="audio-artist">Artist Name</p>
+    <div class="audio-progress">
+      <span class="time-current">1:24</span>
+      <div class="progress-track">
+        <div class="progress-bar" style="width: 40%"></div>
+      </div>
+      <span class="time-total">3:45</span>
+    </div>
+  </div>
+  <button class="audio-play">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.audio-player {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.audio-cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.audio-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.audio-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.audio-title {
+  color: #e6edf3;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.audio-artist {
+  color: #8b949e;
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+
+.audio-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-current,
+.time-total {
+  color: #8b949e;
+  font-size: 11px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 4px;
+  background: #30363d;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+}
+
+.audio-play {
+  width: 44px;
+  height: 44px;
+  background: #58a6ff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.audio-play:hover {
+  background: #79b8ff;
+}
+
+.audio-play svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  margin-left: 2px;
+}
+</style>`
+  },
+
 ];
