@@ -9,6 +9,14 @@
 </head>
 <body>
 
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-logo">&lt;/&gt;</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
   <!-- Sidebar -->
   <aside class="sidebar" id="sidebar">
     <a href="index.html" class="sidebar-header">
@@ -40,6 +48,9 @@
       <button class="nav-btn" data-category="dropdowns">Dropdowns</button>
       <button class="nav-btn" data-category="skeletons">Skeletons</button>
       <button class="nav-btn" data-category="avatars">Avatars</button>
+      <button class="nav-btn" data-category="pricing">Pricing</button>
+      <button class="nav-btn" data-category="timelines">Timelines</button>
+      <button class="nav-btn" data-category="steppers">Steppers</button>
     </nav>
   </aside>
 
@@ -53,6 +64,9 @@
         <input type="text" id="searchInput" placeholder="Search components..." autocomplete="off">
       </div>
       <span class="component-count" id="componentCount"></span>
+      <a href="instructions.html" class="info-btn" aria-label="How to use">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </a>
       <button class="layout-toggle" id="layoutToggle" aria-label="Toggle layout">
         <svg class="icon-grid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <svg class="icon-list" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
@@ -67,6 +81,23 @@
       <!-- Cards rendered dynamically by app.js -->
     </div>
   </main>
+
+  <!-- Preview Modal -->
+  <div class="preview-modal" id="previewModal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-tag"></span>
+          <h3></h3>
+        </div>
+        <button class="modal-close" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-preview"></div>
+    </div>
+  </div>
 
   <!-- Scroll to Top Button -->
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">

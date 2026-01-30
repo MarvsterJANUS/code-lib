@@ -55,6 +55,9 @@ function renderCards() {
       <div class="card-actions">
         <button class="btn-toggle">View Code</button>
         <button class="btn-copy">Copy Code</button>
+        <button class="btn-expand" aria-label="Expand preview">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
       </div>
     `;
 
@@ -81,11 +84,33 @@ function renderCards() {
       });
     });
 
+    // Expand preview
+    const expandBtn = article.querySelector('.btn-expand');
+    expandBtn.addEventListener('click', () => {
+      openPreviewModal(comp);
+    });
+
     grid.appendChild(article);
   });
 }
 
 renderCards();
+animateCards();
+
+// ===========================
+// Staggered Card Animation
+// ===========================
+function animateCards() {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, index) => {
+    card.classList.remove('visible');
+    setTimeout(() => {
+      if (card.style.display !== 'none') {
+        card.classList.add('visible');
+      }
+    }, 30 * index);
+  });
+}
 
 // ===========================
 // Category Filtering
@@ -114,6 +139,7 @@ searchInput.addEventListener('input', () => {
 function filterCards() {
   const query = searchInput.value.toLowerCase().trim();
   let visible = 0;
+  let visibleIndex = 0;
 
   document.querySelectorAll('.card').forEach(card => {
     const name = card.dataset.name.toLowerCase();
@@ -124,9 +150,15 @@ function filterCards() {
 
     if (matchesCategory && matchesSearch) {
       card.style.display = '';
+      card.classList.remove('visible');
+      // Staggered animation
+      const delay = visibleIndex * 30;
+      setTimeout(() => card.classList.add('visible'), delay);
+      visibleIndex++;
       visible++;
     } else {
       card.style.display = 'none';
+      card.classList.remove('visible');
     }
   });
 
@@ -201,4 +233,52 @@ window.addEventListener('scroll', () => {
 
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===========================
+// Page Transition with Loader
+// ===========================
+const pageLoader = document.getElementById('pageLoader');
+const homeLink = document.querySelector('a.sidebar-header');
+
+if (homeLink && pageLoader) {
+  homeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    pageLoader.classList.add('active');
+    setTimeout(() => {
+      window.location.href = homeLink.href;
+    }, 800);
+  });
+}
+
+// ===========================
+// Preview Modal
+// ===========================
+const previewModal = document.getElementById('previewModal');
+const modalBackdrop = previewModal.querySelector('.modal-backdrop');
+const modalClose = previewModal.querySelector('.modal-close');
+const modalTag = previewModal.querySelector('.modal-tag');
+const modalTitle = previewModal.querySelector('.modal-header h3');
+const modalPreview = previewModal.querySelector('.modal-preview');
+
+function openPreviewModal(comp) {
+  modalTag.textContent = comp.tag;
+  modalTitle.textContent = comp.name;
+  modalPreview.innerHTML = comp.preview;
+  previewModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePreviewModal() {
+  previewModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+modalBackdrop.addEventListener('click', closePreviewModal);
+modalClose.addEventListener('click', closePreviewModal);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && previewModal.classList.contains('active')) {
+    closePreviewModal();
+  }
 });

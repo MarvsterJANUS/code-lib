@@ -2326,4 +2326,364 @@ document.addEventListener('click', (e) => {
 </style>`
   },
 
+  // ===================== PRICING CARDS =====================
+
+  {
+    category: "pricing",
+    tag: "Pricing",
+    name: "Pricing Cards",
+    preview: `<div style="display:flex;gap:12px;align-items:stretch;max-width:420px">
+  <div style="flex:1;background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;text-align:center">
+    <div style="font-size:12px;color:#8b949e;margin-bottom:4px">Basic</div>
+    <div style="font-size:24px;font-weight:800;color:#e6edf3;margin-bottom:8px">$9<span style="font-size:12px;font-weight:400;color:#8b949e">/mo</span></div>
+    <div style="font-size:10px;color:#8b949e;line-height:1.5;margin-bottom:12px">5 projects<br>10GB storage</div>
+    <button style="width:100%;padding:8px;background:#21262d;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:11px;font-weight:600;cursor:pointer">Get Started</button>
+  </div>
+  <div style="flex:1;background:#161b22;border:2px solid #58a6ff;border-radius:12px;padding:16px;text-align:center;position:relative">
+    <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#58a6ff;color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px">POPULAR</div>
+    <div style="font-size:12px;color:#8b949e;margin-bottom:4px">Pro</div>
+    <div style="font-size:24px;font-weight:800;color:#e6edf3;margin-bottom:8px">$29<span style="font-size:12px;font-weight:400;color:#8b949e">/mo</span></div>
+    <div style="font-size:10px;color:#8b949e;line-height:1.5;margin-bottom:12px">Unlimited projects<br>100GB storage</div>
+    <button style="width:100%;padding:8px;background:#58a6ff;border:none;border-radius:6px;color:#fff;font-size:11px;font-weight:600;cursor:pointer">Get Started</button>
+  </div>
+  <div style="flex:1;background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;text-align:center">
+    <div style="font-size:12px;color:#8b949e;margin-bottom:4px">Enterprise</div>
+    <div style="font-size:24px;font-weight:800;color:#e6edf3;margin-bottom:8px">$99<span style="font-size:12px;font-weight:400;color:#8b949e">/mo</span></div>
+    <div style="font-size:10px;color:#8b949e;line-height:1.5;margin-bottom:12px">Unlimited everything<br>Priority support</div>
+    <button style="width:100%;padding:8px;background:#21262d;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-size:11px;font-weight:600;cursor:pointer">Contact Us</button>
+  </div>
+</div>`,
+    code: `<div class="pricing-cards">
+  <div class="pricing-card">
+    <div class="pricing-name">Basic</div>
+    <div class="pricing-price">$9<span>/mo</span></div>
+    <ul class="pricing-features">
+      <li>5 projects</li>
+      <li>10GB storage</li>
+      <li>Email support</li>
+    </ul>
+    <button class="pricing-btn">Get Started</button>
+  </div>
+
+  <div class="pricing-card featured">
+    <div class="pricing-badge">POPULAR</div>
+    <div class="pricing-name">Pro</div>
+    <div class="pricing-price">$29<span>/mo</span></div>
+    <ul class="pricing-features">
+      <li>Unlimited projects</li>
+      <li>100GB storage</li>
+      <li>Priority support</li>
+      <li>Advanced analytics</li>
+    </ul>
+    <button class="pricing-btn primary">Get Started</button>
+  </div>
+
+  <div class="pricing-card">
+    <div class="pricing-name">Enterprise</div>
+    <div class="pricing-price">$99<span>/mo</span></div>
+    <ul class="pricing-features">
+      <li>Unlimited everything</li>
+      <li>Dedicated support</li>
+      <li>Custom integrations</li>
+      <li>SLA guarantee</li>
+    </ul>
+    <button class="pricing-btn">Contact Us</button>
+  </div>
+</div>
+
+<style>
+.pricing-cards {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+.pricing-card {
+  flex: 1;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+.pricing-card.featured {
+  border: 2px solid #58a6ff;
+}
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #58a6ff;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+.pricing-name {
+  font-size: 14px;
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+.pricing-price {
+  font-size: 36px;
+  font-weight: 800;
+  color: #e6edf3;
+  margin-bottom: 24px;
+}
+.pricing-price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #8b949e;
+}
+.pricing-features {
+  list-style: none;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.pricing-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid #30363d;
+  color: #e6edf3;
+  font-size: 14px;
+}
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+.pricing-btn {
+  width: 100%;
+  padding: 12px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #e6edf3;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pricing-btn:hover {
+  background: #30363d;
+}
+.pricing-btn.primary {
+  background: #58a6ff;
+  border: none;
+  color: #fff;
+}
+.pricing-btn.primary:hover {
+  background: #79b8ff;
+}
+</style>`
+  },
+
+  // ===================== TIMELINES =====================
+
+  {
+    category: "timelines",
+    tag: "Timelines",
+    name: "Vertical Timeline",
+    preview: `<div style="max-width:280px;padding-left:20px;border-left:2px solid #30363d">
+  <div style="position:relative;padding-bottom:20px">
+    <div style="position:absolute;left:-27px;top:0;width:12px;height:12px;background:#58a6ff;border-radius:50%;border:2px solid #0d1117"></div>
+    <div style="font-size:11px;color:#58a6ff;margin-bottom:4px">Jan 2024</div>
+    <div style="font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:2px">Project Started</div>
+    <div style="font-size:11px;color:#8b949e">Initial planning and setup phase completed.</div>
+  </div>
+  <div style="position:relative;padding-bottom:20px">
+    <div style="position:absolute;left:-27px;top:0;width:12px;height:12px;background:#238636;border-radius:50%;border:2px solid #0d1117"></div>
+    <div style="font-size:11px;color:#238636;margin-bottom:4px">Mar 2024</div>
+    <div style="font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:2px">Beta Launch</div>
+    <div style="font-size:11px;color:#8b949e">Released to early adopters for testing.</div>
+  </div>
+  <div style="position:relative">
+    <div style="position:absolute;left:-27px;top:0;width:12px;height:12px;background:#8b949e;border-radius:50%;border:2px solid #0d1117"></div>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:4px">Jun 2024</div>
+    <div style="font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:2px">Public Release</div>
+    <div style="font-size:11px;color:#8b949e">Coming soon...</div>
+  </div>
+</div>`,
+    code: `<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-dot active"></div>
+    <div class="timeline-date">Jan 2024</div>
+    <div class="timeline-title">Project Started</div>
+    <div class="timeline-desc">Initial planning and setup phase completed.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot success"></div>
+    <div class="timeline-date">Mar 2024</div>
+    <div class="timeline-title">Beta Launch</div>
+    <div class="timeline-desc">Released to early adopters for testing.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+    <div class="timeline-date">Jun 2024</div>
+    <div class="timeline-title">Public Release</div>
+    <div class="timeline-desc">Coming soon...</div>
+  </div>
+</div>
+
+<style>
+.timeline {
+  padding-left: 28px;
+  border-left: 2px solid #30363d;
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 32px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -35px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: #8b949e;
+  border-radius: 50%;
+  border: 3px solid #0d1117;
+}
+.timeline-dot.active {
+  background: #58a6ff;
+}
+.timeline-dot.success {
+  background: #238636;
+}
+.timeline-date {
+  font-size: 12px;
+  color: #8b949e;
+  margin-bottom: 6px;
+}
+.timeline-item:has(.timeline-dot.active) .timeline-date {
+  color: #58a6ff;
+}
+.timeline-item:has(.timeline-dot.success) .timeline-date {
+  color: #238636;
+}
+.timeline-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e6edf3;
+  margin-bottom: 4px;
+}
+.timeline-desc {
+  font-size: 14px;
+  color: #8b949e;
+  line-height: 1.5;
+}
+</style>`
+  },
+
+  // ===================== STEPPERS =====================
+
+  {
+    category: "steppers",
+    tag: "Steppers",
+    name: "Step Progress",
+    preview: `<div style="display:flex;align-items:flex-start;gap:0;width:100%;max-width:400px">
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="width:32px;height:32px;background:#238636;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700">✓</div>
+    <div style="font-size:10px;color:#e6edf3;margin-top:8px">Account</div>
+  </div>
+  <div style="flex:1;height:2px;background:#238636;margin:15px 12px 0"></div>
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="width:32px;height:32px;background:#58a6ff;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700">2</div>
+    <div style="font-size:10px;color:#58a6ff;margin-top:8px">Details</div>
+  </div>
+  <div style="flex:1;height:2px;background:#30363d;margin:15px 12px 0"></div>
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="width:32px;height:32px;background:#21262d;border:2px solid #30363d;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8b949e;font-size:12px;font-weight:700">3</div>
+    <div style="font-size:10px;color:#8b949e;margin-top:8px">Payment</div>
+  </div>
+  <div style="flex:1;height:2px;background:#30363d;margin:15px 12px 0"></div>
+  <div style="display:flex;flex-direction:column;align-items:center">
+    <div style="width:32px;height:32px;background:#21262d;border:2px solid #30363d;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#8b949e;font-size:12px;font-weight:700">4</div>
+    <div style="font-size:10px;color:#8b949e;margin-top:8px">Confirm</div>
+  </div>
+</div>`,
+    code: `<div class="stepper">
+  <div class="step completed">
+    <div class="step-circle">✓</div>
+    <div class="step-label">Account</div>
+  </div>
+  <div class="step-line completed"></div>
+
+  <div class="step active">
+    <div class="step-circle">2</div>
+    <div class="step-label">Details</div>
+  </div>
+  <div class="step-line"></div>
+
+  <div class="step">
+    <div class="step-circle">3</div>
+    <div class="step-label">Payment</div>
+  </div>
+  <div class="step-line"></div>
+
+  <div class="step">
+    <div class="step-circle">4</div>
+    <div class="step-label">Confirm</div>
+  </div>
+</div>
+
+<style>
+.stepper {
+  display: flex;
+  align-items: flex-start;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-circle {
+  width: 36px;
+  height: 36px;
+  background: #21262d;
+  border: 2px solid #30363d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b949e;
+  font-size: 14px;
+  font-weight: 700;
+}
+.step.active .step-circle {
+  background: #58a6ff;
+  border-color: #58a6ff;
+  color: #fff;
+}
+.step.completed .step-circle {
+  background: #238636;
+  border-color: #238636;
+  color: #fff;
+}
+.step-label {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #8b949e;
+}
+.step.active .step-label {
+  color: #58a6ff;
+}
+.step.completed .step-label {
+  color: #e6edf3;
+}
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #30363d;
+  margin-top: 18px;
+  min-width: 40px;
+}
+.step-line.completed {
+  background: #238636;
+}
+</style>`
+  },
+
 ];

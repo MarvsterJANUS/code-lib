@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use - Code Library</title>
+  <link rel="icon" type="image/png" href="assets/icons/codelib-favicon.png">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/instructions.css">
+</head>
+<body>
+
+  <div class="top-actions">
+    <a href="index.html" class="info-btn" aria-label="Back to home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+  </div>
+
+  <main class="instructions">
+    <a href="index.html" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to Home
+    </a>
+
+    <div class="logo">&lt;/&gt;</div>
+    <h1>How to Use</h1>
+    <p class="tagline">Get code snippets into your project in 3 easy steps</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Browse & Find</h3>
+          <p>Open the <strong>Library</strong> and browse components by category (Buttons, Cards, Forms, etc.) or use the search bar to find what you need.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Preview & Copy</h3>
+          <p>Click <strong>"View Code"</strong> to see the HTML/CSS code, then click <strong>"Copy Code"</strong> to copy it to your clipboard.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Paste & Customize</h3>
+          <p>Paste the code into your HTML file. Customize the colors, text, and styles to match your project's design.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips">
+      <h2>Quick Tips</h2>
+      <ul>
+        <li>Each component is self-contained - just paste and it works</li>
+        <li>Use the grid/list toggle to change how you view components</li>
+        <li>Switch between dark and light themes with the sun/moon button</li>
+        <li>All code is free to use in any project</li>
+      </ul>
+    </div>
+
+    <a href="library.html" class="cta-button">
+      Go to Library
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </main>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('codelib-theme') || 'dark';
+    root.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('codelib-theme', next);
+    });
+  </script>
+</body>
+</html>
