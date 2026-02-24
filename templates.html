@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Library</title>
+  <title>Templates - Code Library</title>
   <link rel="icon" type="image/png" href="assets/icons/codelib-favicon.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/templates.css">
 </head>
 <body>
 
@@ -24,46 +25,16 @@
       <h1>Code Library</h1>
     </a>
     <nav>
-      <button class="nav-btn active" data-category="all">All Components</button>
-      <button class="nav-btn" data-category="accordions">Accordions</button>
-      <button class="nav-btn" data-category="alerts">Alerts</button>
-      <button class="nav-btn" data-category="avatars">Avatars</button>
-      <button class="nav-btn" data-category="badges">Badges</button>
-      <button class="nav-btn" data-category="breadcrumbs">Breadcrumbs</button>
-      <button class="nav-btn" data-category="buttons">Buttons</button>
-      <button class="nav-btn" data-category="cards">Cards</button>
-      <button class="nav-btn" data-category="code">Code</button>
-      <button class="nav-btn" data-category="countdown">Countdown</button>
-      <button class="nav-btn" data-category="dividers">Dividers</button>
-      <button class="nav-btn" data-category="dropdowns">Dropdowns</button>
-      <button class="nav-btn" data-category="faq">FAQ</button>
-      <button class="nav-btn" data-category="footers">Footers</button>
-      <button class="nav-btn" data-category="forms">Forms</button>
-      <button class="nav-btn" data-category="gallery">Gallery</button>
-      <button class="nav-btn" data-category="heroes">Hero Sections</button>
-      <button class="nav-btn" data-category="inputs">Inputs</button>
-      <button class="nav-btn" data-category="lists">Lists</button>
-      <button class="nav-btn" data-category="loaders">Loaders</button>
-      <button class="nav-btn" data-category="media">Media</button>
-      <button class="nav-btn" data-category="modals">Modals</button>
-      <button class="nav-btn" data-category="navbars">Navbars</button>
-      <button class="nav-btn" data-category="pagination">Pagination</button>
-      <button class="nav-btn" data-category="pricing">Pricing</button>
-      <button class="nav-btn" data-category="progress">Progress Bars</button>
-      <button class="nav-btn" data-category="products">Products</button>
-      <button class="nav-btn" data-category="ratings">Ratings</button>
-      <button class="nav-btn" data-category="search">Search</button>
-      <button class="nav-btn" data-category="skeletons">Skeletons</button>
-      <button class="nav-btn" data-category="sliders">Sliders</button>
-      <button class="nav-btn" data-category="stats">Stats</button>
-      <button class="nav-btn" data-category="steppers">Steppers</button>
-      <button class="nav-btn" data-category="tables">Tables</button>
-      <button class="nav-btn" data-category="tabs">Tabs</button>
-      <button class="nav-btn" data-category="testimonials">Testimonials</button>
-      <button class="nav-btn" data-category="timelines">Timelines</button>
-      <button class="nav-btn" data-category="toggles">Toggles</button>
-      <button class="nav-btn" data-category="tooltips">Tooltips</button>
+      <button class="nav-btn active" data-category="all">All Templates</button>
+      <button class="nav-btn" data-category="landing">Landing Pages</button>
+      <button class="nav-btn" data-category="portfolio">Portfolio</button>
+      <button class="nav-btn" data-category="business">Business</button>
     </nav>
+    <div class="sidebar-divider"></div>
+    <a href="library.html" class="sidebar-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Components
+    </a>
   </aside>
 
   <!-- Main Content -->
@@ -73,13 +44,9 @@
         <span></span><span></span><span></span>
       </button>
       <div class="search-wrapper">
-        <input type="text" id="searchInput" placeholder="Search components..." autocomplete="off">
+        <input type="text" id="searchInput" placeholder="Search templates..." autocomplete="off">
       </div>
-      <span class="component-count" id="componentCount"></span>
-      <a href="templates.html" class="nav-link-btn" aria-label="Templates">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <span>Templates</span>
-      </a>
+      <span class="component-count" id="templateCount"></span>
       <a href="instructions.html" class="info-btn" aria-label="How to use">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       </a>
@@ -94,14 +61,14 @@
     </header>
 
     <div class="grid" id="grid">
-      <!-- Cards rendered dynamically by app.js -->
+      <!-- Template cards rendered dynamically by templates-app.js -->
     </div>
   </main>
 
   <!-- Preview Modal -->
   <div class="preview-modal" id="previewModal">
     <div class="modal-backdrop"></div>
-    <div class="modal-content">
+    <div class="modal-content modal-content-large">
       <div class="modal-header">
         <div class="modal-title">
           <span class="modal-tag"></span>
@@ -111,7 +78,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-      <div class="modal-preview"></div>
+      <div class="modal-preview">
+        <iframe id="templatePreviewFrame"></iframe>
+      </div>
     </div>
   </div>
 
@@ -120,10 +89,9 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <style>
-    @keyframes slide { 0%,30%{transform:translateX(0)} 33%,63%{transform:translateX(-33.33%)} 66%,96%{transform:translateX(-66.66%)} 100%{transform:translateX(0)} }
-  </style>
-  <script src="js/components.js"></script>
-  <script src="js/app.js"></script>
+  <!-- JSZip for ZIP downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/templates-app.js"></script>
 </body>
 </html>
