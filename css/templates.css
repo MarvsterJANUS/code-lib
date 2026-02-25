@@ -39,6 +39,11 @@
    =========================== */
 
 /* Template Preview - taller for templates */
+
+.card-header {
+  padding: 16px 20px 16px;
+}
+
 .template-card .card-preview {
   min-height: 200px;
   padding: 0;
@@ -70,7 +75,7 @@
 
 /* Template Description */
 .card-description {
-  padding: 0 20px 16px;
+  padding: 12px 20px 16px;
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
